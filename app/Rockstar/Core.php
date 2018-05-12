@@ -191,41 +191,5 @@ class Core extends Helper {
 		return $response;
 	}
 
-	public function getProjects($filter, $start = 0, $per_page = 9){
-		$projects = \App\Models\Project::where($filter)->orderBy('pos', 'desc')->skip($start)->take($per_page)->get();
-		return $projects;
-	}
-
-	public function getProject($id = 0){
-		$id = (int)$id;
-		$project = \App\Models\Project::where(['block' => 0, 'id' => $id])->first();
-		return $project;
-	}
-
-	public function getSameProjects($project = null){
-		$response = collect(array());
-		if($project != null){
-			$response = \App\Models\Project::where([['block', '!=', '1'], ['id', '!=', $project->id], ['type', $project->type]])->orderBy('pos', 'desc')->skip(0)->take(9)->get();
-		}
-		return $response;
-	}
-
-	public function getHomePageSections($instances){
-		return [
-			$instances['1']::get() ?: [],
-			$instances['2']::get() ?: [],
-			$instances['3']::get() ?: [],
-			$instances['4']::get() ?: [],
-		];
-	}
-
-	public function getServices($filter = [], ...$params){
-		// $filter ~ ['id' => 2] || [['id', '>', 1], ['id', '<=', 5]]
-		$instance = \App\Models\Service::where($filter);
-		if ($params && $params[0] == 'home_services') {
-			$instance = $instance->orderBy('id', 'desc')->skip(0)->take(6);
-		}
-		return $instance->get() ?: [];
-	}
 
 }
