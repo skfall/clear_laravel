@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class EventsProvider extends ServiceProvider {
+class ObserversProvider extends ServiceProvider {
 
     public function boot() {
         \App\Models\User::observe(\App\Observers\UserObserver::class);

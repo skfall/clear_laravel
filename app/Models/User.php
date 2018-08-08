@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class User extends Model {
-    protected $table = 'osc_users';
+    protected $table = 'mp_users';
     const CREATED_AT = 'created';
     const UPDATED_AT = 'modified';
 

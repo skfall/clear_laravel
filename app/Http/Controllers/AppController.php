@@ -40,7 +40,7 @@ class AppController extends BaseController {
         $this->locale = Config::get('app.locale');
         $this->locale_array = config('app.locales')[$this->locale];
         $this->prefix = $this->locale_array['prefix'];      
-        $this->config = Models\Config::first(['osc_settings.*', $this->prefix.'copyright as copyright']);
+        $this->config = Models\Settings::first();
         $this->nav = Models\Nav::where('block', '!=', 1)->orderBy('pos')->get(['osc_nav.*', $this->prefix.'name as name']);
         $this->top_nav = $this->nav->where('type', 0);
         $this->core = new Core();

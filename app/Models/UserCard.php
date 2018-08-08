@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class UserCard extends Model {
-    protected $table = 'osc_user_cards';
-    public $timestamps = false;
+    protected $table = 'mp_user_cards';
+    const CREATED_AT = 'created';
+    const UPDATED_AT = 'modified';
 
     public function user() {
     	return $this->belongsTo('App\Models\User', 'user_id', 'id');

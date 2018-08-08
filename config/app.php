@@ -155,6 +155,7 @@ return [
 
         // MULTILANG PROVIDER
         App\Providers\MultilangServiceProvider::class,
+        
         /*
          * Package Service Providers...
          */
@@ -168,8 +169,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        // EVENTS PROVIDER
-        App\Providers\EventsProvider::class,
+        // OBSERVERS PROVIDER
+        App\Providers\ObserversProvider::class,
 
 
     ],

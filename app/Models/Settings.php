@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Config extends Model {
+class Settings extends Model {
+	const CREATED_AT = null;
 	const UPDATED_AT = 'modified';
-	protected $table = 'osc_settings';
+	protected $table = 'mp_settings';
 }
